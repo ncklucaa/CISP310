@@ -22,19 +22,19 @@ mpg				BYTE	40 DUP (?)
 .CODE
 _MainProc	PROC
 			input	prompt1, string, 40     ; read ASCII characters
-			atod	string					; convert to integer
-			mov		numOfGallons, eax		; store in memory
+			atod	string			; convert to integer
+			mov	numOfGallons, eax	; store in memory
 
-			input	prompt2, string, 40		; repeat for second number
+			input	prompt2, string, 40	; repeat for second number
 			atod	string
-			mov		numOfMiles, eax 
+			mov	numOfMiles, eax 
 
-			mov		eax, numOfMiles			; first number to EAX
+			mov	eax, numOfMiles		; first number to EAX
 			cdq
-			idiv	numOfGallons			; divide
-			dtoa	mpg, eax				; convert to ASCII characters
-			output	resultLbl, mpg			; output label and mpg
-			mov		eax, 0					; exit with return code 0
+			idiv	numOfGallons		; divide
+			dtoa	mpg, eax		; convert to ASCII characters
+			output	resultLbl, mpg		; output label and mpg
+			mov		eax, 0		; exit with return code 0
 			ret
 _MainProc ENDP
-END											; end of source code
+END							; end of source code
