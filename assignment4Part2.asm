@@ -6,40 +6,40 @@
 .586
 .MODEL FLAT
 
-INCLUDE io.h            ; header file for input/output
+INCLUDE io.h     ; header file for input/output
 
 .STACK 4096
 
 .DATA 
-Rent		    DWORD ?
-Utilities	  DWORD ?
-prompt1		  BYTE    "Enter your monthly expense on rent/mortgage:", 0
-prompt2		  BYTE    "Enter your monthly expenses on utilities", 0
-resultLbl	  BYTE    "Total monthly cost of these expenses:", 0
+Rent		DWORD ?
+Utilities	DWORD ?
+prompt1		BYTE  "Enter your monthly expense on rent/mortgage:", 0
+prompt2		BYTE  "Enter your monthly expenses on utilities", 0
+resultLbl	BYTE  "Total monthly cost of these expenses:", 0
 resultLbl2	BYTE  "Total yearly cost of these expenses:", 0
-string		  BYTE  40 DUP (?)
+string		BYTE  40 DUP (?)
 outputTotal	BYTE  40 DUP (?)
 
 .CODE
 _MainProc	PROC
 	input	prompt1, string, 40		; read ASCII characters
-	atod	string					      ; convert to integer
-	mov		Rent, eax				      ; store in memor
+	atod	string				; convert to integer
+	mov	Rent, eax			; store in memor
 
 	input	prompt2, string, 40		; repeat for second number
 	atod	string
-	mov		Utilities, eax
+	mov	Utilities, eax
 
-	add		eax, Rent
+	add	eax, Rent
 	dtoa	outputTotal, eax
 	output	resultLbl, outputTotal
 
-	mov		ebx, 12
-	mul		ebx						            ; multiply
-	dtoa	outputTotal, eax		      ; convert to ASCII characters
-	output	resultLbl2, outputTotal	; output label and total
+	mov	ebx, 12
+	mul	ebx				; multiply
+	dtoa	outputTotal, eax		; convert to ASCII characters
+	output	resultLbl2, outputTotal		; output label and total
 
-	mov		eax, 0					          ; exit with return code 0
+	mov	eax, 0				; exit with return code 0
 	ret
 _MainProc ENDP
-END											          ; end of source code
+END						; end of source code
