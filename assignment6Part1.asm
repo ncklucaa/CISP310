@@ -12,10 +12,10 @@ INCLUDE io.h       ; header file for input/output
  
 .DATA
 numDays    DWORD 1
-prompt1    BYTE "How many days have you worked from 1 to 31?", 0
+prompt1    BYTE "how many days have you worked from 1 to 31?", 0
 string     DWORD 4 DUP (?)
-resultLbl   BYTE "Pennies earned", 0
-resultLbl2  BYTE "You entered less than 1 day or more than 31", 0 
+resultLbl   BYTE "pennies earned", 0
+resultLbl2  BYTE "you entered less than 1 day or more than 31", 0 
 outputTotal BYTE 11 DUP (?), 0
  
 .CODE
