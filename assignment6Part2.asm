@@ -48,27 +48,27 @@ _MainProc PROC
 	mov eax, userWeight
 	sub eax, weightMonth2
 	dtoa totalMonth2, eax
-	output resultLbl, totalMonth2
+	output resultLbl2, totalMonth2
 
 	mov eax, userWeight
 	sub eax, weightMonth3
 	dtoa totalMonth3, eax
-	output resultLbl, totalMonth3
+	output resultLbl3, totalMonth3
 
 	mov eax, userWeight
 	sub eax, weightMonth4
 	dtoa totalMonth4, eax
-	output resultLbl, totalMonth4
+	output resultLbl4, totalMonth4
 
 	mov eax, userWeight
 	sub eax, weightMonth5
 	dtoa totalMonth5, eax
-	output resultLbl, totalMonth5
+	output resultLbl5, totalMonth5
 
 	mov eax, userWeight
 	sub eax, weightMonth6
 	dtoa totalMonth6, eax
-	output resultLbl, totalMonth6
+	output resultLbl6, totalMonth6
 
 	mov eax, 0
 	ret
